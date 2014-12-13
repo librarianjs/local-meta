@@ -1,6 +1,6 @@
 {
   "name": "librarian-local-meta",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "LibrarianJS local sqlite metadata engine",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/librarianjs/local-meta",
   "dependencies": {
+    "hashids": "^1.0.1",
+    "lodash": "^2.4.1",
     "sequelize": "^2.0.0-rc3",
     "sqlite3": "^3.0.4"
   }

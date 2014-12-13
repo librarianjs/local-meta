@@ -41,7 +41,7 @@ LocalMeta.prototype.get = function( fileId, callback ){
   var id = this.parseId( fileId )
 
   if( id === false ){
-    throw new Error( 'No such file exists' )
+    return callback( null, false )
   }
 
   this.File.find( id ).bind( this ).then( function( file ){
