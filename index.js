@@ -31,7 +31,7 @@ LocalMeta.prototype.sanitize = function( file ){
   if( _.isArray( file ) ){
     return file.map( this.sanitize.bind( this ) )
   } else {
-    file = file.values
+    file = file.get()
     file.id = this.makeId( file.id )
     return file
   }
@@ -73,7 +73,7 @@ LocalMeta.prototype.patch = function( fileId, values, callback ){
 
 LocalMeta.prototype.new = function( meta, callback ){
   this.File.create( meta ).bind( this ).then( function( file ){
-    var meta = file.values
+    var meta = file.get()
     meta.id = this.makeId( meta.id )
     callback( null, meta )
   }, function(){
