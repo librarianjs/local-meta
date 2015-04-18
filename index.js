@@ -3,8 +3,11 @@ var path = require( 'path' )
 var file = require( './File' )
 var HashId = require( 'hashids' )
 
+var baseDir = process.env.PWD
+  || process.env.LOCAL_META_BASEDIR
+  || __dirname
 var defaults = {
-  db: path.join( process.env.PWD, 'files.sqlite' )
+  db: path.join( baseDir, 'files.sqlite' )
 }
 
 function LocalMeta( options ){
