@@ -49,7 +49,7 @@ LocalMeta.prototype.get = function( fileId, callback ){
 
   this.File.find( id ).bind( this ).then( function( file ){
     callback( null, this.sanitize( file ) )
-  }, function(){
+  }).catch(function(){
     callback( new Error( 'Could not retreive file ' + id ) )
   })
 }
